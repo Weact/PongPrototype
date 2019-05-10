@@ -1,0 +1,14 @@
+unit PongBallUnit;
+
+interface
+uses crt, PongGameObjectUnit;
+
+type balle = record
+	obj : GameObject
+	coul : INTEGER
+	velocite : INTEGER
+end;
+
+implementation
+
+end.

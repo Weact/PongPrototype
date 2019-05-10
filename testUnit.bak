@@ -1,0 +1,38 @@
+program testUnit;
+
+uses crt, SDL2, PongGameObjectUnit, PongVecteur2DUnit, PongBallUnit;
+
+const CoeffVect = 2 : INTEGER;
+
+var V1, V2, V3, V4, V5 : Vect2D;
+
+BEGIN
+clrscr;
+writeln('Tout s''est correctement deroule.');
+
+//Affectation des positions X/Y du vecteur 1
+setVectPosX(V1, 10);
+setVectPosY(V1, 15);
+
+//Affectation des positions X/Y du vecteur 2
+setVectPosX(V2, 6);
+setVectPosY(V2, 21);
+
+//Affection des positions X/Y du vecteur 3 selon les positions X/Y des vecteurs 1 et 2 (addition)
+V3 := addVect(V1,V2);
+
+//Affection des positions X/Y du vecteur 4 selon les positions X/Y des vecteurs 1 et 2 (soustraction)
+V4 := sousVect(V1,V2);
+
+
+V5 := scalVect(V1,CoeffVect);
+
+writeln('Position X:Y du Vecteur 1: ' , getPosX(V1) , ':' , getPosY(V1) , '.');
+writeln('Position X:Y du Vecteur 2: ' , getPosX(V2) , ':' , getPosY(V2) , '.');
+writeln('(+) Position X:Y du Vecteur 3: ' , getPosX(V3) , ':' , getPosY(V3) , '.');
+writeln('(-) Position X:Y du Vecteur 4: ' , getPosX(V4) , ':' , getPosY(V4) , '.');
+writeln('(SCAL) Position X:Y du Vecteur 5: ' , getPosX(V5) , ':' , getPosY(V5) , '.');
+readln();
+
+END.
+
